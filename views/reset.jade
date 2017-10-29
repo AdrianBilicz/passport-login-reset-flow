@@ -1,0 +1,11 @@
+extends layout
+
+block login
+	form(method="post")
+		label(for="password") password
+		input(type="text" name="password")
+		br
+		label(for="password-confirm") password-confirm
+		input(type="text" name="password-confirm")
+		br
+		input(type="submit" value="Reset Password")

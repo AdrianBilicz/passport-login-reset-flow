@@ -1,0 +1,10 @@
+mixin loginForm()
+	h1 Login
+	form(action="/login" method="post")
+		label(for="email") email
+		input(type="text" name="email")
+		br
+		label(for="password") password
+		input(type="text" name="password")
+		br
+		input(type="submit" value="Log In")

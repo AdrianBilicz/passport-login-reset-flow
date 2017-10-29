@@ -1,0 +1,24 @@
+include mixins/loginForm
+include mixins/forgot
+
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block login
+        +loginForm
+        +forgotForm
+    block messages
+      if locals.user
+        h3 Hi #{user.name}
+        img(src=user.gravatar, height='80' alt="")
+        a(href="/logout") Logout
+        a(href="/account") Account
+      if locals.flashes
+        - const categories = Object.keys(locals.flashes)
+        each category in categories
+          each msg in flashes[category]
+            p= msg
+    block content
